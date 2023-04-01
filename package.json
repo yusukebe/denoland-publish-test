@@ -1,0 +1,17 @@
+{
+  "name": "denoland-publish-test",
+  "version": "0.0.0",
+  "scripts": {
+    "denoify": "denoify"
+  },
+  "author": "Yusuke Wada <yusuke@kamawada.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "denoify": "^1.5.2"
+  },
+  "dependencies": {
+    "hono": "^3.1.5",
+    "js-yaml": "^4.1.0",
+    "zod": "^3.21.4"
+  }
+}

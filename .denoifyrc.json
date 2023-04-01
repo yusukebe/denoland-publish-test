@@ -1,0 +1,11 @@
+{
+  "ports": {
+    "zod": "https://deno.land/x/zod/mod.ts"
+  },
+  "includes": [
+    "README.md",
+    "LICENSE",
+    "res/**/*.txt",
+    "!res/dir2/file3.txt"
+  ]
+}
