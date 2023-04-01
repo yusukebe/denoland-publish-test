@@ -1,1 +1,1 @@
-import { hello } from './middleware/packages/hello/src/index'
+export { hello } from './middleware/packages/hello/src/index'
