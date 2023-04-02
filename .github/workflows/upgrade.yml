@@ -22,5 +22,6 @@ jobs:
           git commit -m "Update"
           git push
           yarn release
+        name: 'commit & release'
       - if: failure()
         run: echo "Skip upgrading"
