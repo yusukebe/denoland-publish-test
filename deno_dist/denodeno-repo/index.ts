@@ -1,3 +1,3 @@
 export const denodeno = (): void => {
-  console.log('denodeno dayo')
+  console.log('denodeno dayo dayo')
 }
