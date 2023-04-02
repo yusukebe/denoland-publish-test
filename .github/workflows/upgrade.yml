@@ -1,0 +1,23 @@
+name: upgrade
+on:
+  push:
+    branches: [main]
+
+jobs:
+  upgrade:
+    name: 'Upgrade'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+      - run: yarn install --frozen-lockfile
+      - run: yarn update
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Update"
+          git push
+      - run: yarn release
