@@ -4,7 +4,7 @@
   "scripts": {
     "git-submodule-update": "git submodule update --remote src/denodeno-repo",
     "denoify": "rimraf deno_dist && denoify && rm deno_dist/denodeno-repo/.git",
-    "update": "yarn git-submodule-update && yarn denoify"
+    "update-deno-dist": "yarn git-submodule-update && yarn denoify"
   },
   "author": "Yusuke Wada <yusuke@kamawada.com>",
   "license": "MIT",
