@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# This script based on https://genzouw.com/entry/2023/02/13/100724/3264/
+
 set -o errexit
 set -o nounset
 set -o noclobber
