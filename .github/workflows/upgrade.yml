@@ -1,7 +1,5 @@
 name: upgrade
 on:
-  push:
-    branches: [main]
   repository_dispatch:
     types: [update_denoland]
 
@@ -12,9 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: git submodule update --init --recursive
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 18
       - run: yarn install --frozen-lockfile
       - run: yarn update
       - name: Check if there are any changes
