@@ -15,11 +15,11 @@ jobs:
           node-version: 18.x
       - run: yarn install --frozen-lockfile
       - run: yarn update
-      - name: count changes
-        id: changes
+      - run: yarn release
+      - name: Check if there are any changes
+        id: verify_diff
         run: |
-          git add -N .
-          echo "::set-output name=count::$(git diff --name-only | wc -l)"
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
       - name: commit & push & release
         run: |
           git config user.name github-actions
@@ -27,5 +27,4 @@ jobs:
           git add .
           git commit -m "Update"
           git push
-          yarn release
-        if: steps.changes.outputs.count > 0
+        if: steps.verify_diff.outputs.changed == 'true'
