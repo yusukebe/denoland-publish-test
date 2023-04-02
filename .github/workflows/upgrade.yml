@@ -15,10 +15,17 @@ jobs:
           node-version: 18.x
       - run: yarn install --frozen-lockfile
       - run: yarn update
-      - run: |
+      - name: count changes
+        id: changes
+        run: |
+          git add -N .
+          echo "::set-output name=count::$(git diff --name-only | wc -l)"
+      - name: commit & push & release
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
           git commit -m "Update"
           git push
-        name: 'commit & push'
+          yarn release
+        if: steps.changes.outputs.count > 0
