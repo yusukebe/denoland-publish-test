@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "git-submodule-update": "git submodule update --remote src/denodeno-repo",
-    "denoify": "denoify && rm deno_dist/denodeno-repo/.git",
+    "denoify": "rimraf deno_dist && denoify && rm deno_dist/denodeno-repo/.git",
     "update": "yarn git-submodule-update && yarn denoify",
     "release": "./git-tag"
   },
   "author": "Yusuke Wada <yusuke@kamawada.com>",
   "license": "MIT",
   "devDependencies": {
-    "denoify": "^1.5.3"
+    "denoify": "^1.5.3",
+    "rimraf": "^4.4.1"
   },
   "dependencies": {}
 }
