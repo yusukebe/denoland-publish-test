@@ -1,0 +1,3 @@
+[submodule "src/denodeno-repo"]
+	path = src/denodeno-repo
+	url = https://github.com/yusukebe/denodeno.git
