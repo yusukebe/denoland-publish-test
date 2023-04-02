@@ -2,7 +2,11 @@
   "name": "denoland-publish-test",
   "version": "0.0.0",
   "scripts": {
-    "denoify": "denoify"
+    "denoify": "denoify",
+    "rm-git": "rm deno_dist/denodeno-repo/.git",
+    "git-submodule-update": "git submodule update --remote src/denodeno-repo",
+    "update": "yarn git-submodule-update && yarn denoify && yarn rm-git",
+    "git-tag": "./git-tag"
   },
   "author": "Yusuke Wada <yusuke@kamawada.com>",
   "license": "MIT",
